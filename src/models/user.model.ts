@@ -1,10 +1,5 @@
-import { model, mongo, Schema } from "mongoose";
-
-const mongoose = require("mongoose")
-const  connectDB = async() => {
-    await mongoose.connect(`${process.env.CONNECTION_URL}/${process.env.DB_NAME}`);
-};
-
+import { Schema,model} from "mongoose"
+import mongoose from "mongoose"
 const UserSchema =new Schema({
     username : {
         type:String,
@@ -31,4 +26,3 @@ const UserSchema =new Schema({
 
 
 export const User = mongoose.model("User",UserSchema)
-module.exports = {connectDB};
